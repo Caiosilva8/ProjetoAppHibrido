@@ -16,11 +16,6 @@ export class AppComponent {
       title: 'Home',
       url: '/home',
       icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
     },{
       title: 'Lista de Clientes',
       url: '/lista-de-clientes',
@@ -33,6 +28,14 @@ export class AppComponent {
       title: 'Cadastro de Cliente',
       url: '/cadastro-de-cliente',
       icon: 'contacts'
+    },{
+      title: 'Cadastrar Mensagem',
+      url: '/mensagem',
+      icon: 'mail'
+    },{
+      title: 'Lista de Mensagens',
+      url: '/lista-de-mensagem',
+      icon: 'body'
     }
   ];
 
@@ -56,13 +59,13 @@ export class AppComponent {
     .subscribe(
       user => {
         if (user) {
-          this.router.navigate(['/list']);
+          this.router.navigate(['/lista-de-clientes']);
           } else {
             this.router.navigate(['/home']);
           }
       },
       () => {
-        this.router.navigate(['/list']);
+        this.router.navigate(['/lista-de-clientes']);
       }
     );
 

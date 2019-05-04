@@ -2,17 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Cliente } from '../model/cliente';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-cadastro-de-cliente',
-  templateUrl: './cadastro-de-cliente.page.html',
-  styleUrls: ['./cadastro-de-cliente.page.scss'],
+  selector: 'app-mensagem',
+  templateUrl: './mensagem.page.html',
+  styleUrls: ['./mensagem.page.scss'],
 })
-export class CadastroDeClientePage implements OnInit {
+export class MensagemPage implements OnInit {
 
-  listaDeClientes: any[];
+  listaDeMensagem: any[];
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots : true};
   formGroup : FormGroup;
@@ -22,19 +21,18 @@ export class CadastroDeClientePage implements OnInit {
               public loadingController : LoadingController,
               public toastController : ToastController) {
     this.formGroup = this.formBuilder.group({
-      nome : [''],
-      telefone : [''],
-      email : [''],
-    })
+      titulo : [''],
+      texto : [''],
+      data : [''],
+    })              
   }
 
   ngOnInit() {
   }
 
-  cadastrar(){
 
-    this.loading();
-    let ref = this.firestore.collection('cliente')
+  cadastrar(){
+    let ref = this.firestore.collection('mensagem')
     ref.add(this.formGroup.value)
     .then(()=>{
       this.toast('Cadastrado com Sucesso');
@@ -61,9 +59,5 @@ export class CadastroDeClientePage implements OnInit {
     });
     await loading.present();
   }
-
-
-  
-
 
 }

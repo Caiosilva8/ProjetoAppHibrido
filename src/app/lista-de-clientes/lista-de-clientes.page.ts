@@ -30,6 +30,8 @@ export class ListaDeClientesPage implements OnInit {
   }
 
   getList(){
+
+    this.loading();
     var ref = firebase.firestore().collection("cliente");
     ref.get().then(query=>{
       query.forEach(doc=>{
@@ -38,9 +40,9 @@ export class ListaDeClientesPage implements OnInit {
         c.id = doc.id;
         this.listaDeClientes.push(c);
       });
-      console.log(this.listaDeClientes);
+      this.loadingController.dismiss();
     });
-  }
+  };
 
   
   remove(obj : Cliente){
@@ -53,5 +55,14 @@ export class ListaDeClientesPage implements OnInit {
         console.log('Erro ao atualizar');
       })
   }
+
+  async loading() {
+    const loading = await this.loadingController.create({
+      message: 'Carregando',
+      duration: 2000
+    });
+    await loading.present();
+  }
+
 
 }
