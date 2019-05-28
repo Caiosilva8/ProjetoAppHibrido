@@ -23,8 +23,8 @@ export class CadastroDeClientePage implements OnInit {
               public toastController : ToastController) {
     this.formGroup = this.formBuilder.group({
       nome : [''],
-      telefone : [''],
       email : [''],
+      senha : [''],
     })
   }
 

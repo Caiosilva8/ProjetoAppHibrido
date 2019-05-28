@@ -2,8 +2,8 @@ export class Cliente{
 
     id : string;
     nome : string;
-    telefone : string;
     email : string;
+    senha : string;
 
     constructor(){   
     }
@@ -11,7 +11,7 @@ export class Cliente{
     // Dados do firebase
     setDados(obj : any){
         this.nome = obj.nome;
-        this.telefone = obj.telefone;
         this.email = obj.email;
+        this.senha = obj.senha;
     }
 }

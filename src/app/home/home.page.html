@@ -1,31 +1,56 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Home
+      Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <ion-list>
 
-    <ion-item>
-      <ion-label fixed>E-mail</ion-label>
-      <ion-input type="text" value="" #email></ion-input>
-    </ion-item>
+  <ion-button (click)="proximo()">Teste</ion-button>
+  <ion-button (click)="anterior()">Teste</ion-button>
+
+  <ion-slides pager="false" [options]="slideOpts" >
+    <ion-slide>
+      <div>
+        <span>Cadastro</span>
+
+        <ion-item>
+          <ion-label class="">E-mail</ion-label>
+          <ion-input type="text" value="" #email></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Senha</ion-label>
+          <ion-input type="password" value="" #senha></ion-input>
+        </ion-item>
+
+        <ion-button color="primary" (click)="cadastrar()">Cadastrar</ion-button>
+      </div>
+
+    </ion-slide>
+    <ion-slide>
+        <div>
+            <span>Login</span>
   
-    <ion-item>
-      <ion-label fixed>Senha</ion-label>
-      <ion-input type="password" #senha></ion-input>
-    </ion-item>
+            <ion-item>
+                <ion-label class="">E-mail</ion-label>
+                <ion-input type="text" value="" #email></ion-input>
+            </ion-item>
   
-  </ion-list>
+            <ion-item>
+                <ion-label fixed>Senha</ion-label>
+                <ion-input type="password" value="" #senha></ion-input>
+            </ion-item>
+  
+            <ion-button color="primary" (click)="logar()">Entrar</ion-button>
+  
+          </div>
+    </ion-slide>
+ 
+  </ion-slides>
 
-  <!-- <button ion-button full (click)="login()">Entrar</button> -->
-  <ion-button color="primary" (click)="logar()">Entrar</ion-button>
-
-  <!-- <button ion-button full (click)="cadastrar()" outline>Novo Usuário</button> -->
-  <ion-button color="primary" (click)="cadastrar()">Novo Usuário</ion-button>
 
 </ion-content>
