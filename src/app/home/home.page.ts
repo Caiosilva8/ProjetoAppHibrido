@@ -12,6 +12,8 @@ export class HomePage {
 
   @ViewChild('email') email;
   @ViewChild('senha') senha;
+  @ViewChild('email1') email1;
+  @ViewChild('senha1') senha1;
   @ViewChild(IonSlides) slides: IonSlides;
 
   constructor(public router : Router,
