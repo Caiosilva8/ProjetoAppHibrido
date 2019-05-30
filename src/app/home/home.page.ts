@@ -14,6 +14,7 @@ export class HomePage {
   @ViewChild('senha') senha;
   @ViewChild('email1') email1;
   @ViewChild('senha1') senha1;
+
   @ViewChild(IonSlides) slides: IonSlides;
 
   constructor(public router : Router,
@@ -38,7 +39,8 @@ export class HomePage {
     this.fire.auth.signInWithEmailAndPassword(this.email.value,this.senha.value)
       .then(()=>{
         console.log('Logado com sucesso');
-        this.router.navigate(['/list']);
+        // this.router.navigate(['/list']);
+        this.router.navigate(['/index']);
       })
       .catch(()=>{
         console.log('Login Inválido');
@@ -46,7 +48,7 @@ export class HomePage {
   }
 
   cadastrar(){
-    this.fire.auth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
+    this.fire.auth.createUserWithEmailAndPassword(this.email1.value,this.senha1.value)
     .then(()=> {
       console.log("Cadastrado com sucesso!");
     }).catch(()=>{

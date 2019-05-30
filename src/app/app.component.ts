@@ -13,9 +13,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
+      title: 'index',
+      url: '/index',
+      icon: 'index'
     },{
       title: 'Lista de Clientes',
       url: '/lista-de-clientes',
@@ -59,7 +59,8 @@ export class AppComponent {
     .subscribe(
       user => {
         if (user) {
-          this.router.navigate(['/lista-de-clientes']);
+          //this.router.navigate(['/lista-de-clientes']);
+          this.router.navigate(['/index']);
           } else {
             this.router.navigate(['/home']);
           }

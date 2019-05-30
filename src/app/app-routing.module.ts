@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'cadastro-de-cliente', loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule' },
   { path: 'cliente-view', loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' },  { path: 'mensagem', loadChildren: './mensagem/mensagem.module#MensagemPageModule' },
   { path: 'lista-de-mensagem', loadChildren: './lista-de-mensagem/lista-de-mensagem.module#ListaDeMensagemPageModule' },
-  { path: 'mensagem-view', loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' }
+  { path: 'mensagem-view', loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },
+  { path: 'index', loadChildren: './index/index.module#IndexPageModule' }
 
 
 ];
