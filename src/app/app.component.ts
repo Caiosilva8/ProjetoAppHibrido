@@ -36,6 +36,10 @@ export class AppComponent {
       title: 'Lista de Mensagens',
       url: '/lista-de-mensagem',
       icon: 'body'
+    },{
+      title: 'Produto',
+      url: '/produto',
+      icon: 'body'
     }
   ];
 

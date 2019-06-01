@@ -18,6 +18,10 @@
     </ion-segment-button>
   </ion-segment>
 
+  <div class="logo">
+    <img src="../../assets/img/Logo.png">  
+  </div>
+  
 
   <!-- 
   <ion-button (click)="proximo()">Teste</ion-button>
@@ -39,7 +43,7 @@
           <ion-input type="password" value="" #senha1></ion-input>
         </ion-item>
 
-        <ion-button color="primary" (click)="cadastrar()">Cadastrar</ion-button>
+        <ion-button color="primary" (click)="cadastrar()" fill="outline" color="dark">Cadastrar</ion-button>
       </div>
 
     </ion-slide>
@@ -57,7 +61,7 @@
                 <ion-input type="password" value="" #senha></ion-input>
             </ion-item>
   
-            <ion-button color="primary" (click)="logar()">Entrar</ion-button>
+            <ion-button color="primary" (click)="logar()" fill="outline" color="dark">Entrar</ion-button>
   
           </div>
     </ion-slide>
